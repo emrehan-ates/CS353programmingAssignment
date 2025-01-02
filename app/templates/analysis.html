@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo List</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='analysis.css') }}">
+    </head>
+
+    <body>
+        <nav>
+            <div class="nav-left">
+                <h1>Todo List</h1>
+            </div>
+            <div class="nav-right">
+                <form action="{{ url_for('tasks') }}" method="get" style="display:inline;">
+                    <button type="submit">Main Page</button>
+                </form>
+                <form action="{{ url_for('logout') }}" method="get" style="display:inline;">
+                    <button type="submit">Logout</button>
+                </form>
+                <form action="{{ url_for('analysis') }}" method="get" style="display:inline;">
+                    <button type="submit">Analytics</button>
+                </form>
+            </div>
+        </nav>
+            <div class="container">
+        
+                <!-- Section 1: Tasks Ordered by Deadline -->
+                <section class="analysis-section">
+                    <h2>1. Tasks Ordered by Deadline</h2>
+                    <table>
+                        <tr>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Deadline</th>
+                            <th>Status</th>
+                        </tr>
+                        {% for task in tasks_by_deadline %}
+                        <tr>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.task_type }}</td>
+                            <td>{{ task.deadline }}</td>
+                            <td>{{ task.status }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </section>
+        
+                <!-- Section 2: Tasks Ordered by Completion Time -->
+                <section class="analysis-section">
+                    <h2>2. Tasks Ordered by Completion Time</h2>
+                    <table>
+                        <tr>
+                            <th>Title</th>
+                            <th>Completion Time</th>
+                            <th>Time Spent (Hours)</th>
+                        </tr>
+                        {% for task in tasks_by_completion_time %}
+                        <tr>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.completion_time }}</td>
+                            <td>{{ task.time_spent }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </section>
+        
+                <!-- Section 3: Uncompleted Tasks Ordered by Deadline -->
+                <section class="analysis-section">
+                    <h2>3. Uncompleted Tasks Ordered by Deadline</h2>
+                    <table>
+                        <tr>
+                            <th>Title</th>
+                            <th>Task Type</th>
+                            <th>Deadline</th>
+                        </tr>
+                        {% for task in uncompleted_tasks %}
+                        <tr>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.task_type }}</td>
+                            <td>{{ task.deadline }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </section>
+        
+                <!-- Section 4: Tasks Completed After Deadline (Latency) -->
+                <section class="analysis-section">
+                    <h2>4. Tasks Completed After Deadline (Latency)</h2>
+                    <table>
+                        <tr>
+                            <th>Title</th>
+                            <th>Latency (Hours)</th>
+                        </tr>
+                        {% for task in overdue_tasks %}
+                        <tr>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.latency }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </section>
+        
+                <!-- Section 5: Completed Tasks Per Task Type -->
+                <section class="analysis-section">
+                    <h2>5. Completed Tasks Per Task Type</h2>
+                    <table>
+                        <tr>
+                            <th>Task Type</th>
+                            <th>Completed Tasks</th>
+                        </tr>
+                        {% for task in completed_tasks_by_type %}
+                        <tr>
+                            <td>{{ task.task_type }}</td>
+                            <td>{{ task.completed_tasks }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </section>
+            </div>
+        
+        
+
+
+    </body>
+
+
+</html>

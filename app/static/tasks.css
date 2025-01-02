@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.nav-left h1 {
+    margin: 0;
+}
+
+.nav-right {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-right form button {
+    background-color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #4CAF50;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-right form button:hover {
+    background-color: #f4f4f4;
+}
+
+
+#add-task {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#add-task h2 {
+    margin-bottom: 15px;
+}
+
+#add-task form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+#add-task form input,
+#add-task form textarea,
+#add-task form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#add-task form button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-task form button:hover {
+    background-color: #45a049;
+}
+
+section {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table td {
+    font-size: 14px;
+}
+
+.action-buttons form {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.action-buttons button {
+    background-color: #4CAF50;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+.edit-btn {
+    background-color: #ff9800;
+}
+
+.edit-btn:hover {
+    background-color: #fb8c00;
+}
+
+.done-btn {
+    background-color: #2196F3;
+}
+
+.done-btn:hover {
+    background-color: #1976D2;
+}
+
+#done-tasks {
+    margin-top: 40px;
+}
+
+#done-tasks table {
+    margin-top: 10px;
+}
+
+#done-tasks th,
+#done-tasks td {
+    text-align: center;
+}
+
+#done-tasks td {
+    font-size: 14px;
+}
